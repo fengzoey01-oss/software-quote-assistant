@@ -1,0 +1,4 @@
+interface:
+  display_name: "软件报价助手"
+  short_description: "通用工作流、虚构示例与明确的使用边界"
+  default_prompt: "使用 $software-quote-assistant，基于我提供的材料完成任务；缺失事实请明确标注。"

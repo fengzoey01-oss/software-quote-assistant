@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "rule_version": "0.1",
+  "project": {
+    "id": "DEMO-001",
+    "name": "虚构任务管理工具报价示例",
+    "revision": "V0.1",
+    "date": "2026-01-01",
+    "currency": "CNY",
+    "price_basis": "inclusive",
+    "tax_rate": "0.06"
+  },
+  "sources": [
+    {
+      "id": "DEMO",
+      "state": "虚构测试数据，非实际客户或公司费率"
+    }
+  ],
+  "items": [
+    {
+      "id": "D1",
+      "name": "任务概览",
+      "scope": "base",
+      "method": "service_days",
+      "pricing": {
+        "days": "3",
+        "rate": "1800",
+        "rate_kind": "service_price"
+      },
+      "source_refs": [
+        "DEMO"
+      ],
+      "description": "配置运行指标、趋势和待办展示。",
+      "conditions": "演示假设：使用已有组件。"
+    },
+    {
+      "id": "D2",
+      "name": "示例接口适配",
+      "scope": "base",
+      "method": "cost_plus",
+      "pricing": {
+        "rate_kind": "cost",
+        "components": [
+          {
+            "id": "C1",
+            "name": "假设人工成本",
+            "amount": "5000"
+          },
+          {
+            "id": "C2",
+            "name": "假设测试费用",
+            "amount": "1000"
+          }
+        ],
+        "markup": "0.3"
+      },
+      "source_refs": [
+        "DEMO"
+      ],
+      "description": "一个开放接口的数据适配与测试。",
+      "conditions": "演示假设：厂家提供接口文档。"
+    },
+    {
+      "id": "D3",
+      "name": "同源概览复用",
+      "scope": "base",
+      "method": "included",
+      "pricing": {},
+      "included_in": [
+        "D1"
+      ],
+      "source_refs": [
+        "DEMO"
+      ],
+      "description": "同一组运行指标在大屏展示。",
+      "conditions": "已含于运行总览。"
+    },
+    {
+      "id": "D4",
+      "name": "新增分析专题",
+      "scope": "optional",
+      "selected": false,
+      "method": "service_days",
+      "pricing": {
+        "days": null,
+        "rate": null,
+        "rate_kind": "service_price"
+      },
+      "source_refs": [
+        "DEMO"
+      ],
+      "description": "专题范围待确认。",
+      "conditions": "未选配，后续核定工作量。"
+    }
+  ],
+  "relations": [],
+  "conditions": {},
+  "open_questions": [],
+  "reviews": []
+}
